@@ -31,6 +31,7 @@ class Program
 
     static void Main(string[] args)
     {
+        //  Get user's name abbreviation from their first and last name.
         string abbreviation = GetAbbreviation();
 
         //  Prepare drawing assets.

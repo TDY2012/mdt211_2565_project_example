@@ -4,6 +4,7 @@ class Program
 {
     static void Main(string[] args)
     {
+        //  Define available timezone info.
         string[] timezoneIdArray = new string[] {
             "GMT Standard Time",
             "Central America Standard Time",
@@ -14,6 +15,7 @@ class Program
             "Tokyo Standard Time",
         };
 
+        //  Show available timezone info.
         Console.WriteLine("Available timezone:");
         for(int i=0; i < timezoneIdArray.Length; i++)
         {
@@ -21,12 +23,14 @@ class Program
         }
         Console.Write("Please input a timezone id (0 - {0}): ", timezoneIdArray.Length - 1);
 
+        //  Parse timezone id index and exit program if invalid.
         int timezoneIdIndex = int.Parse(Console.ReadLine());
         if(timezoneIdIndex < 0 || timezoneIdIndex >= timezoneIdArray.Length)
         {
             Console.WriteLine("Invalid timezone id. Terminated.");
         }
 
+        //  Get local time and convert to selected timezone.
         DateTime localDateTime = DateTime.Now;
         DateTime convertedDateTime = TimeZoneInfo.ConvertTime(
             localDateTime,
